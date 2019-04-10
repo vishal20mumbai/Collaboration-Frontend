@@ -57,9 +57,9 @@ input[type="password"] {
 					<b style="color: #c7c7c7 !important">Login Form</b>
 				</h3>
 
-				<input type="text" required="required"  class="form-control" name="u_name" placeholder="Username" ng-model="User.loginname" />
+				<input type="text" class="form-control" name="u_name" placeholder="Username" ng-model="User.loginname" required autofocus />
 				<br />
-				 <input type="password" required="required"  class="form-control" name="u_pass" placeholder="Password" ng-model="User.password" />
+				 <input type="password" class="form-control" name="u_pass" placeholder="Password" ng-model="User.password" required />
 
 				<button class="btn btn-lg btn-primary btn-block" name="Submit"
 					value="Login" type="Submit" ng-click="logincheck()">Login</button>

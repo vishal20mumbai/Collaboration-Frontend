@@ -8,7 +8,7 @@
 		</tr>
 		<tr>
 			<th> Designation</th>
-			<td><input type="text" name="designation" ng-model="job.designation" required/></td>
+			<td><input type="text" required="required" name="designation" ng-model="job.designation" required/></td>
 		</tr>
 		<tr>
 			<th>Company</th>
@@ -22,10 +22,7 @@
 			<th>Salary</th>
 			<td><input type="text" required="required" name="salary" ng-model="job.salary" required/></td>
 		</tr>
-		<tr>
-			<th>Last Date To Apply</th>
-			<td><input type="text" required="required" name="lastDateToApply" ng-model="job.lastDateToApply" required/></td>
-		</tr>
+		
 		<tr align="center">
 			<td colspan="2"><input value="Insert Job"
 				class="btn btn-warning" ng-click="addJob()" type="submit" /></td>

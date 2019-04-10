@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Collaboration</title>
+<title>SnapChat!!</title>
 <!-- Angular Files -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
@@ -45,7 +45,7 @@
 </head>
 <style>
 body {
-	background-image: url("Images/photo1.png");
+	background-image: url("Images/photo1.jpg");
 }
 
 #carousel-example-generic .item img {
@@ -82,31 +82,22 @@ hr {
 </style>
 <body ng-app="MyApp">
 
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#/Home"><img src="Images/logo.jpg"
-					class="img-circle" align="middle" alt="logo"
-					style="height: 50px; width: 50px"> </a>
+				<a class="navbar-brand" href="#/Home"><img src="Images/logo.jpg" class="img-circle" align="middle" alt="logo" style="height: 50px; width: 50px"> </a>
 			</div>
 			<ul class="nav navbar-nav">
 				<li>
-				<li><a class="nav-link" href="#/Home"
-					ng-show="currentUser==undefined"><span
-						class="glyphicon glyphicon-home"></span> Home</a> <a class="nav-link"
-					href="#/userhome" ng-hide="currentUser==undefined"><span
-						class="glyphicon glyphicon-home"></span> Home</a></li>
-				<li><a class="nav-link" href="#/login"
-					ng-show="currentUser==undefined"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
-				<li><a class="nav-link" href="#/register"
-					ng-show="currentUser==undefined"><span
-						class="glyphicon glyphicon-user"></span> Register</a></li>
+				<li><a class="nav-link" href="#/Home" ng-show="currentUser==undefined"><span class="glyphicon glyphicon-home"></span> Home</a> 
+				<a class="nav-link" href="#/userhome" ng-hide="currentUser==undefined"><span class="glyphicon glyphicon-home"></span> Home</a></li>		
+				<li><a class="nav-link" href="#/login" ng-show="currentUser==undefined"><span class="glyphicon glyphicon-log-in"></span> Login</a>
+				</li>
+				
+				<li><a class="nav-link" href="#/register" ng-show="currentUser==undefined"><span class="glyphicon glyphicon-user"></span> Register</a>
+				</li>
 
-				<li class="dropdown" ng-hide="currentUser==undefined"><a
-					class="dropdown-toggle" data-toggle="dropdown" href="#"><span
-						class="glyphicon glyphicon-education"></span>Blogs <span
-						class="caret"></span></a>
+				<li class="dropdown" ng-hide="currentUser==undefined"><a data-toggle="dropdown" href="#"><span 	class="glyphicon glyphicon-education"></span>Blogs <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li
 							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
@@ -118,99 +109,58 @@ hr {
 							ng-hide="currentUser.role=='ROLE_ADMIN'||currentUser==undefined"><a
 							class="nav-link" href="#/ViewBlog">View Blog</a></li>
 					</ul></li>
-				<li class="dropdown" ng-hide="currentUser==undefined"><a
-					class="dropdown" class="dropdown-toggle" data-toggle="dropdown"
-					href="#"><span class="glyphicon glyphicon-education"></span>
-						Forums<span class="caret"></span></a>
+					
+					
+				<li class="dropdown" ng-hide="currentUser==undefined"><a class="dropdown" class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-education"></span>Forums<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li
-							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
-							class="nav-link" href="#/Forum">Display Forums</a></li>
-						<li
-							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
-							class="nav-link" href="#/AddForum">Add Forum</a></li>
-						<li
-							ng-hide="currentUser.role=='ROLE_USER'||currentUser==undefined"><a
-							class="nav-link" href="#/ManageForum">Manage Forums</a></li>
-					</ul></li>
-				<li ng-hide="currentUser==undefined" class="dropdown"><a
-					class="dropdown-toggle" data-toggle="dropdown" href="#"><span
-						class="glyphicon glyphicon-certificate"></span> Jobs<span
-						class="caret"></span></a>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a class="nav-link" href="#/Forum">Display Forums</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a class="nav-link" href="#/AddForum">Add Forum</a></li>
+						<li ng-hide="currentUser.role=='ROLE_USER'||currentUser==undefined"><a class="nav-link" href="#/ManageForum">Manage Forums</a></li></ul></li>
+				
+				<li ng-hide="currentUser==undefined" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-certificate"></span> Jobs<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 
-						<li
-							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
-							href="#/Job">Browse Jobs</a></li>
-						<li
-							ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a
-							href="#/AddJob">Add Job</a></li>
-						<li
-							ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a
-							href="#/ManageJob">Manage Job</a></li>
-						<li
-							ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
-							href="#/ApplyingJob">Job Application</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/Job">Browse Jobs</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a href="#/AddJob">Add Job</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_USER'"><a href="#/ManageJob">Manage Job</a></li>
+						<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a	href="#/ApplyingJob">Job Application</a></li>
 
 					</ul></li>
-				<li class="dropdown"
-					ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'">
-					<a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span
-						class="fas fa-user-friends"></span>Friend<span class="caret"></span></a>
+				<li class="dropdown" ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"> <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <span class="fas fa-user-friends"></span>Friend<span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a class="nav-link" href="#/friendlist">Friend List</a></li>
-						<li><a class="nav-link" href="#/requestpending">Pending
-								Request</a></li>
-						<li><a class="nav-link" href="#/suggestionlist">Suggestion
-								List</a></li>
+						<li><a class="nav-link" href="#/requestpending">Pending Request</a></li>
+						<li><a class="nav-link" href="#/suggestionlist">Suggestion List</a></li>
 					</ul>
 				</li>
 			</ul>
-			<div class="nav navbar-nav navbar-right"
-				ng-hide="currentUser==undefined" ng-controller="UserController">
+			<div class="nav navbar-nav navbar-right" ng-hide="currentUser==undefined" ng-controller="UserController">
 
 				<ul class="nav navbar-nav">
-					<li><a class="dropdown-toggle" data-toggle="dropdown" href=""><button
-								class="btn btn-rose btn-raised btn-round">
-								Welcome {{currentUser.loginname}} <span
-									class="glyphicon glyphicon-chevron-down"></span>
-							</button></a>
+					<li><a class="dropdown-toggle" data-toggle="dropdown" href=""><button class="btn btn-rose btn-raised btn-round">Welcome {{currentUser.loginname}} <span class="glyphicon glyphicon-chevron-down"></span> </button></a>
 						<ul class="dropdown-menu">
-							<li><a href="#/profilepicture"><span
-									class="glyphicon glyphicon-picture"></span> Profile Picture</a></li></li>
-					<li
-						ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a
-						href="#/chat"><span class="glyphicon glyphicon-envelope"></span>
-							Chat</a></li>
+					<li><a href="#/profilepicture"><span class="glyphicon glyphicon-picture"></span> Profile Picture</a></li></li>
+					<li ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'"><a href="#/chat"><span class="glyphicon glyphicon-envelope"></span>Chat</a></li>
 				
-					<li align="center"
-						ng-show="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'">
-						<button value="Logout" ng-click="logout()"
-							class="btn btn-sm btn-danger">Logout</button>
+					<li align="center"	ng-show="currentUser.role=='ROLE_USER'||currentUser.role=='ROLE_ADMIN'"><button value="Logout" ng-click="logout()"class="btn btn-sm btn-danger">Logout</button>
 					</li>
 				</ul>
 				</li>
 
-				<li><img id="img1"
-					src="http://localhost:8080/mymiddleware/getImage/{{currentUser.loginname}}"
-					alt="avatar" class="img-circle" onerror=this.src=
-					"avatar1.png" style="height: 50px; width: 60px"></li>
+				<li><img id="img1" src="http://localhost:8080/mymiddleware/getImage/{{currentUser.loginname}}" alt="avatar" class="img-circle" onerror=this.src="avatar1.png" style="height: 50px; width: 60px"></li>
 				</ul>
 
 			</div>
 
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#/AboutUs"><i
-						class="glyphicon glyphicon-list-alt"></i> AboutUs</a></li>
-				<li><a href="#/ContactUs"><i
-						class="glyphicon glyphicon-phone-alt"></i> ContactUs</a></li>
+				<li><a href="#/AboutUs"><i class="glyphicon glyphicon-list-alt"></i> AboutUs</a></li>
+				<li><a href="#/ContactUs"><i class="glyphicon glyphicon-phone-alt"></i> ContactUs</a></li>
 			</ul>
 		</div>
 	</nav>
 	<marquee>
 		<h2>
-			<font face="Comic sans MS" color="GoldenRod">This Blog is all
-				about the art of learning languages </font>
+			<font face="Times New Roman" color="purple">WELCOME TO SNAPCHAT...</font>
 		</h2>
 	</marquee>
 	<hr>
@@ -254,7 +204,7 @@ hr {
 		<hr>
 		<marquee>
 			<h4>
-				<font face="Comic sans MS" color="gold">This Blog is all
+				<font face="Georgia" color="purple">This Blog is all
 					about the art of learning languages The only thing we love more
 					than languages is helping others learn them at home, at school, at
 					the library, and beyond! Here you will learn more than thirty
@@ -270,24 +220,21 @@ hr {
 			<div class="row">
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<a href="Images/lang3.jpg" target="_blank"> <img
-							src="Images/lang3.jpg" alt="Lights" style="width: 100%">
+						<a href="Images/lang3.jpg" target="_blank"> <img src="Images/lang3.jpg" alt="Lights" style="width: 100%">
 
 						</a>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<a href="Images/lang.jpg" target="_blank"> <img
-							src="Images/lang.jpg" alt="Nature" style="width: 100%">
+						<a href="Images/lang.jpg" target="_blank"> <img src="Images/lang.jpg" alt="Nature" style="width: 100%">
 
 						</a>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="thumbnail">
-						<a href="Images/lang2.png" target="_blank"> <img
-							src="Images/lang2.png" alt="Fjords" style="width: 100%">
+						<a href="Images/lang2.png" target="_blank"> <img src="Images/lang2.png" alt="Fjords" style="width: 100%">
 
 						</a>
 					</div>
@@ -301,11 +248,7 @@ hr {
 		<div id="footer">
 			<div class="container">
 				<div class="bottom-bar">
-					<font color="gold"><span
-						class="glyphicon glyphicon-copyright-mark"></span> Copyright
-						&copy; Lang Chat </font><font color="gold"> All Rights Reserved ©
-						2018 | </font><a href="#/AboutUs">About Us</a> | <a href="#/ContactUs">Contact
-						US</a>
+					<font color="gold"><span class="glyphicon glyphicon-copyright-mark"></span> Copyright &copy; SnapChat!! </font><font color="gold"> All Rights Reserved © 2019 | </font><a href="#/AboutUs">About Us</a> | <a href="#/ContactUs">Contact US</a>
 				</div>
 			</div>
 		</div>

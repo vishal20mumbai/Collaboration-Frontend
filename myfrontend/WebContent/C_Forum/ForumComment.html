@@ -37,11 +37,9 @@ hr {
 	<div>
 		<div align="left">
 			<p ng-repeat="forumComment in forumCommentData">
-				<br>&nbsp&nbsp&nbsp <b>{{forumComment.loginname}}</b>
-				{{forumComment.commentText}} {{forumComment.commentDate}} <input
-					type="button" class="btn btn-sm btn-danger" value="Delete"
-					ng-show="currentUser.role=='ROLE_ADMIN'"
-					ng-click="delete(forumComment.commentId)">
+				<br>&nbsp&nbsp&nbsp
+				 <b>{{forumComment.loginname}}</b>{{forumComment.commentText}} {{forumComment.commentDate}}
+				  <input	type="button" class="btn btn-sm btn-danger" value="Delete"	ng-show="currentUser.role=='ROLE_ADMIN'"ng-click="delete(forumComment.commentId)">
 			</p>
 		</div>
 		<div ng-hide="currentUser==undefined||currentUser.role=='ROLE_ADMIN'">

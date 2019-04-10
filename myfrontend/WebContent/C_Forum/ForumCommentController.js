@@ -1,5 +1,4 @@
-MyApplication.controller("ForumCommentController", function($scope, $http,
-		$location, $route, $rootScope) {
+MyApplication.controller("ForumCommentController", function($scope, $http,$location, $route, $rootScope) {
 	$scope.forum = {
 		'forumId' : 0,
 		'forumname' : '',
@@ -30,8 +29,8 @@ MyApplication.controller("ForumCommentController", function($scope, $http,
 	function getAForum() {
 		console.log('Get a Forum');
 		$http.get(
-				'http://localhost:8080/mymiddleware/getForum/'
-						+ $rootScope.forumId).then(function(response) {
+				'http://localhost:8080/mymiddleware/getForum/'+ $rootScope.forumId)
+				.then(function(response) {
 			$scope.forumdata = response.data;
 			console.log($scope.forumdata);
 
@@ -40,15 +39,15 @@ MyApplication.controller("ForumCommentController", function($scope, $http,
 	$scope.addComment = function() {
 		$scope.forumComment.loginname = $rootScope.currentUser.loginname;
 		$scope.forumComment.forumId = $rootScope.forumId;
-		$http.post('http://localhost:8080/mymiddleware/addForumComment',
-				$scope.forumComment).then(function(response) {
+		$http.post('http://localhost:8080/mymiddleware/addForumComment',$scope.forumComment)
+		.then(function(response) {
 			console.log('Successfully Comment Added');
 		});
 	};
 	$scope.deleteComment = function(commentId) {
 		$http.get(
-				'http://localhost:8080/mymiddleware/deleteForumComment/'
-						+ $commentId).then(function(response) {
+				'http://localhost:8080/mymiddleware/deleteForumComment/'+ $commentId)
+				.then(function(response) {
 
 			console.log('Forum Comment Deleted')
 			location.path("/ForumComment");

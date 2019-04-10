@@ -19,5 +19,5 @@ MyApplication.controller("ChatController",function($scope, $http, $cookies,$loca
 		console.log('Receive Method');
 		console.log($scope.User);
 		$scope.messages.push(message);
-	});
+	})
 });

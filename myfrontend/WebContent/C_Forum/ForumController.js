@@ -19,8 +19,7 @@ MyApplication.controller("ForumController", function($scope, $http, $location,$r
 	
 	$scope.addForum = function() {
 		console.log('Add Forum Accessed');
-		$http.post('http://localhost:8080/mymiddleware/addForum',
-				$scope.forum)
+		$http.post('http://localhost:8080/mymiddleware/addForum',$scope.forum)
 				.then(function(response) {
 			$location.path("/AddForum");
 		});
@@ -28,7 +27,7 @@ MyApplication.controller("ForumController", function($scope, $http, $location,$r
 
 	$scope.approve=function(forumId) {
 		console.log('Forum Approved')
-		$http.get('http://localhost:8080/mymiddleware/'+forumId)
+		$http.get('http://localhost:8080/mymiddleware/approveForum'+forumId)
 		.then(function(response) {
 
 		});
@@ -44,7 +43,7 @@ MyApplication.controller("ForumController", function($scope, $http, $location,$r
 	$scope.reject = function(forumId) {
 		console.log('Forum Rejected')
 		$http.get(
-				'http://localhost:8080/mymiddleware/'+forumId)
+				'http://localhost:8080/mymiddleware/rejectForum'+forumId)
 				.then(function(response) {
 
 		});

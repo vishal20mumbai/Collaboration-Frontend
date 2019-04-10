@@ -46,7 +46,12 @@ hr {
 				id="img1" src="Images/avatar1.png" alt="avatar" class="img-circle"
 				onerror=this.src= "avatar.png" style="height: 40px; width: 40px">
 			<time>{{message.time|date:'HH:MM'}}</time>
-			<span><b>{{message.message}}</b></span>
+			
+			<span>
+		<img
+					src="http://localhost:8080/mymiddleWare/getImage/{{currentUser.loginname}}"
+					width="20" height=20 " onerror=this.src="avatar.png" style="height: 50px; width: 60px"/>
+		<b>{{message.message}}</b></span>
 		</p>
 	</div>
 </div>
